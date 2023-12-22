@@ -1,0 +1,16 @@
+<svg width="129" height="129" viewBox="0 0 129 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M128.13 1H1V128.13H128.13V1Z" fill="white" style="mix-blend-mode:multiply"/>
+<g opacity="0.1">
+<path opacity="0.1" d="M128.13 125.12V128.12H125.13" stroke="#20263C" stroke-miterlimit="10"/>
+<path opacity="0.1" d="M119.36 128.12H6.89014" stroke="#20263C" stroke-miterlimit="10" stroke-dasharray="5.77 5.77"/>
+<path opacity="0.1" d="M4 128.12H1V125.12" stroke="#20263C" stroke-miterlimit="10"/>
+<path opacity="0.1" d="M1 119.35V6.87988" stroke="#20263C" stroke-miterlimit="10" stroke-dasharray="5.77 5.77"/>
+<path opacity="0.1" d="M1 4V1H4" stroke="#20263C" stroke-miterlimit="10"/>
+<path opacity="0.1" d="M9.77002 1H122.24" stroke="#20263C" stroke-miterlimit="10" stroke-dasharray="5.77 5.77"/>
+<path opacity="0.1" d="M125.13 1H128.13V4" stroke="#20263C" stroke-miterlimit="10"/>
+<path opacity="0.1" d="M128.13 9.75977V122.24" stroke="#20263C" stroke-miterlimit="10" stroke-dasharray="5.77 5.77"/>
+</g>
+<path d="M43 95L64.5058 80.8472L86 95L64.5058 29L43 95Z" fill="#414042"/>
+<path d="M54 50L30 58.4843L48.8061 65L54 50Z" fill="#414042"/>
+<path d="M99 58.4843L75 50L80.1939 65L99 58.4843Z" fill="#414042"/>
+</svg>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>Header}}
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidemenu {
+            width: 250px;
+            background-color: #f4f9f9;
+            color: black;
+            padding: 20px;
+        }
+
+        .sidemenu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidemenu li {
+            margin-bottom: 10px;
+        }
+
+        .sidemenu a {
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .main {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .backbutton a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            border: 2px solid black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .backbutton a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .welcome h1 {
+            font-size: 28px;
+            margin-right: 20px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .user-info div:first-child {
+            margin-right: 10px;
+            padding: 10px;
+            background: #6f42c1;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .user-info div:last-child {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-info div:last-child span {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin-right: 5px;
+            border-radius: 10px;
+            color: white;
+            background-color: black;
+        }
+
+        /* New styles */
+        td input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        td .student-name {
+            color: lightblue;
+            font-weight: bold;
+        }
+
+        td .opportunities {
+            color: #8AFF8A; /* Lemon Green */
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidemenu">
+        <ul>
+            <div class="user-info">
+                <div>JD</div>
+                <div>
+                    <span>Joe Doe</span>
+                    <span>j.doe@gmail.com</span>
+                </div>
+            </div>
+        </ul>
+
+        <div class="logout">
+       <li><a href="/admin/logout">Logout</a></li>
+        </div>
+    </aside>
+
+    <div class="main">
+        <div class="header">
+            <div class="welcome">
+                <h1>Welcome {{ AdminName }}!</h1>
+            </div>
+
+           <div class="backbutton">
+           <a href="/admin/addmentor">Add Mentor</a>
+                       <a href="#" onclick="goBack()">Back</a>
+                </div>
+
+        </div>
+
+        <!-- Table 1 -->
+        <table border="1">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Student Name</th>
+                <th>Email Address</th>
+                <th>Opportunities</th>
+                <th>Mentor</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#students}}
+            <tr>
+                <td><input type="checkbox"></td>
+                <td class="student-name">{{name}}</td>
+                <td>{{email_address}}</td>
+                <td class="opportunities">{{opportunities}}</td>
+                <td>{{mentors}}</td>
+                <td><button name="{{_id}}">Modify</button></td>
+                <td><button name="{{_id}}">Delete</button></td>
+            </tr>
+            {{/students}}
+            </tbody>
+        </table>
+
+        <!-- Table 2 -->
+        <table border="1">
+            <thead>
+            <tr>
+                <th>Email Address</th>
+                <th>Mentor Name</th>
+                <th>Opportunities</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#mentors}}
+            <tr>
+               <td><input type="checkbox"></td>
+                <td>{{name}}</td>
+                <td>{{email_address}}</td>
+                <td><button name="{{_id}}">Modify</button></td>
+                <td><button name="{{_id}}">Delete</button></td>
+            </tr>
+            {{/mentors}}
+            </tbody>
+        </table>
+
+
+
+    </div>
+</div>
+   <script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</body>
+</html>

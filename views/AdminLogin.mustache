@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    {{>Header}}
+
+<style>
+ 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #B9FDAC;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Updated to column for responsive layout */
+    justify-content: space-around; /* Center items horizontally with space around */
+    align-items: center; /* Center items vertically */
+    height: 100vh;
+    width: 100%;
+}
+
+.register-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Adjusted width for responsiveness */
+    max-width: 400px; /* Added max-width for larger screens */
+    margin-left: 0; /* Removed margin-left */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-outline {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-direction: column; /* Updated to column for responsiveness */
+    margin-bottom: 15px;
+}
+
+.col {
+    margin-right: 0; /* Removed margin-right */
+    margin-bottom: 10px; /* Added margin-bottom for spacing */
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.imagelogo img {
+    max-width: 100%; /* Updated to 100% for responsiveness */
+    height: auto;
+    margin: 20px 0; /* Added margin for spacing */
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 768px) {
+    .container {
+        flex-direction: row; /* Change back to row for larger screens */
+    }
+
+    .register-section {
+        width: 50%; /* Adjusted width for larger screens */
+    }
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+
+
+
+<div class="registersection">
+<h1>Login</h1>
+<form action="/admin/login" method="post">
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input type="email" id="email_address" name="email_address" class="form-control" />
+        <label class="form-label" for="email_address">Email Address</label>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <input type="password" id="hash_password" name="password" class="form-control" />
+        <label class="form-label" for="hash_password">Password</label>
+    </div>
+
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+            <!-- Checkbox -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                <label class="form-check-label" for="form2Example31"> Remember Me </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
+</form>
+    </div>
+
+
+    
+   <div class="imagelogo">
+   <img src="https://hsiassetstorage.sfo2.digitaloceanspaces.com/transforms/blogimages/198080/Mentorship-Program-Template-HSI-Blog_d4bd353bac6a5f3a10ab94d9650d3531.webp" alt="BannerIcon"/>
+   </div>
+
+    
+    </div>
+</body>
+</html>

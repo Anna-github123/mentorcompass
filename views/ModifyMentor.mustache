@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    {{>Header}}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidemenu {
+            width: 250px;
+            background-color: #f4f9f9;
+            color: black;
+            padding: 20px;
+        }
+
+        .sidemenu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidemenu li {
+            margin-bottom: 10px;
+        }
+
+        .sidemenu a {
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .backbutton a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            border: 2px solid black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .backbutton a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .welcome h1 {
+            font-size: 28px;
+            margin-right: 20px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .user-info div:first-child {
+            margin-right: 10px;
+            padding: 10px;
+            background: #6f42c1;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .user-info div:last-child {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-info div:last-child span {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin-right: 5px;
+            border-radius: 10px;
+            color: white;
+            background-color: black;
+        }
+
+        .opportunities {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .opportunity-card {
+            flex: 1;
+            padding: 20px;
+            background-color: #f4f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+        .opportunity-image {
+            width: 100%;
+            height: 200px; /* Increased height */
+            background: url('https://via.placeholder.com/300') center/cover;
+            border-radius: 10px;
+        }
+
+        .opportunity-button {
+            border-radius: 20px;
+            background-color: black; /* Changed background color */
+            border: 1px solid black;
+            padding: 10px 20px;
+            text-align: center;
+            color: white; /* Changed text color */
+        }
+
+        .opportunity-title {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .opportunity-details {
+            display: flex; /* Flex container for opportunity-details */
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .opportunity-details p {
+            margin-right: 10px;
+        }
+
+        .opportunity-details button {
+            border-radius: 20px;
+            background-color: black;
+            border: 1px solid black;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .main {
+            flex-grow: 1;
+            padding: 20px;
+            max-width: calc(100% - 250px); /* Adjusted width */
+        }
+
+    .mentor_section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px; /* Add some padding */
+        margin-top: 40px;
+    }
+
+    .mentor_info {
+        display: flex;
+        align-items: center;
+    }
+
+    .mentor_image img {
+        border-radius: 10px;
+        width: 400px; /* Increase the width */
+        height: 400px; /* Increase the height */
+    }
+
+    .mentor_details {
+        margin-left: 40px; /* Increase the margin for more space between image and details */
+    }
+
+    .mentor_details > h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .mentor_details > p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .mentor_details > button {
+        border-radius: 20px;
+        border: 1px solid #000;
+        color: #000;
+        background-color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+
+
+           .view_mentoring_oppurtunity {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+        }
+
+        .form-outline {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+.form-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #777;
+    font-size: 18px; /* Increased font size */
+    transition: 0.2s ease-out;
+    transform-origin: 0 0;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    border: none;
+    border-bottom: 1px solid #ddd;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 16px; /* Increased font size */
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #6cb2eb;
+    box-shadow: 0 0 5px rgba(108, 178, 235, 0.5);
+}
+
+.btn-primary {
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 12px; /* Increased padding */
+    border-radius: 10px; /* Removed border-radius */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top : 20px;
+}
+
+.btn-primary:hover {
+    background-color: #333; /* Darken the color on hover */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.btn-primary {
+    align-self: flex-end;
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <aside class="sidemenu">
+        <ul>
+            <div class="user-info">
+                <div>BG</div>
+                <div>
+                    <span>Ben Gordons</span>
+                    <span>b.gardens@gmail.com</span>
+                </div>
+            </div>
+        
+            <li><a href="/opportunities">View Opportunities</a></li>
+        </ul>
+
+        <div class="logout">
+            <li><a href="/logout">Logout</a></li>
+        </div>
+    </aside>
+
+    <div class="main">
+        <div class="header">
+            <div class="welcome">
+                <h1>Welcome Sofia!</h1>
+            </div>
+
+            <div class="backbutton">
+                <a href="/students">Back</a>
+            </div>
+        </div>
+
+    <div class="header">
+            <div class="welcome">
+                <h1>Mentoring Opportunity Information</h1>
+            <p>View your mentoring opportunity information </p>
+            </div>
+
+        
+        </div>
+
+
+    <div class="view_mentoring_oppurtunity">
+        <form action="/mentor/login" method="post">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <label for="email_address" class="form-label">Email Address</label>
+                <input type="email" id="email_address" name="email_address" class="form-control" />
+            </div>
+
+            <!-- Name of Mentoring Opportunity input -->
+            <div class="form-outline mb-4">
+                <label for="name_to_be_addressed" class="form-label">Name to be Addressed as </label>
+                <input type="text" id="name_to_be_addressed" name="name_to_be_addressed" class="form-control" />
+            </div>
+
+            <div class="form-group">
+    <label for="exampleFormControlSelect1">Mentoring Opportunity you would like to participate in</label>
+    <select class="form-control" id="category" placeholder="e.g. Professional Speaking (Career Advice)">
+      <option>Professional Speaking (Career Advice)</option>
+      <option>Good Resume Tips (Resume Review)</option>
+      <option>Interview Knowabouts (Mock Interview)</option>
+    </select>
+  </div>
+
+            <!-- Submit button -->
+         <button type="submit" class="btn btn-primary">Add Participation</button>
+        </form>
+    </div>
+</div>
+
+      
+
+
+
+
+
+    </div>
+</div>
+
+</body>
+</html>
+

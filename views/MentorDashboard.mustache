@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{>Header}}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidemenu {
+            width: 250px;
+            background-color: #f4f9f9;
+            color: black;
+            padding: 20px;
+        }
+
+        .sidemenu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidemenu li {
+            margin-bottom: 10px;
+        }
+
+        .sidemenu a {
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .backbutton a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            border: 2px solid black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .backbutton a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .welcome h1 {
+            font-size: 28px;
+            margin-right: 20px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .user-info div:first-child {
+            margin-right: 10px;
+            padding: 10px;
+            background: #6f42c1;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .user-info div:last-child {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-info div:last-child span {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin-right: 5px;
+            border-radius: 10px;
+            color: white;
+            background-color: black;
+        }
+
+        .opportunities {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .opportunity-card {
+            flex: 1;
+            padding: 20px;
+            background-color: #f4f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+        .opportunity-image {
+            width: 100%;
+            height: 200px; /* Increased height */
+            background: url('https://via.placeholder.com/300') center/cover;
+            border-radius: 10px;
+        }
+
+        .opportunity-button {
+            border-radius: 20px;
+            background-color: black; /* Changed background color */
+            border: 1px solid black;
+            padding: 10px 20px;
+            text-align: center;
+            color: white; /* Changed text color */
+        }
+
+        .opportunity-title {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .opportunity-details {
+            display: flex; /* Flex container for opportunity-details */
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .opportunity-details p {
+            margin-right: 10px;
+        }
+
+        .opportunity-details button {
+            border-radius: 20px;
+            background-color: black;
+            border: 1px solid black;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .main {
+            flex-grow: 1;
+            padding: 20px;
+            max-width: calc(100% - 250px); /* Adjusted width */
+        }
+
+    .mentor_section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px; /* Add some padding */
+        margin-top: 40px;
+    }
+
+    .mentor_info {
+        display: flex;
+        align-items: center;
+    }
+
+    .mentor_image img {
+        border-radius: 10px;
+        width: 400px; /* Increase the width */
+        height: 400px; /* Increase the height */
+    }
+
+    .mentor_details {
+        margin-left: 40px; /* Increase the margin for more space between image and details */
+    }
+
+    .mentor_details > h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .mentor_details > p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .mentor_details > button {
+        border-radius: 20px;
+        border: 1px solid #000;
+        color: #000;
+        background-color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+    <aside class="sidemenu">
+        <ul>
+            <div class="user-info">
+                <div>BD</div>
+                <div>
+                    <span>Brian Dan</span>
+                    <span>b.dan@gmail.com</span>
+                </div>
+            </div>
+        </ul>
+
+        <div class="logout">
+           <li><a href="/mentor/logout">Logout</a></li>
+        </div>
+    </aside>
+
+    <div class="main">
+        <div class="header">
+            <div class="welcome">
+                <h1>Welcome Brain!</h1>
+            </div>
+
+           <div class="backbutton">
+                       <a href="#" onclick="goBack()">Back</a>
+                </div>
+        </div>
+
+        <div class="opportunities">
+            <div class="opportunity-card">
+                <div class="opportunity-image"></div>
+                <h3 class="opportunity-title">Good Resume Tips</h3>
+                <div class="opportunity-details">
+                    <p>_By sofia Martina</p>
+                    <button>Details</button>
+                </div>
+            </div>
+
+              <div class="opportunity-card">
+                <div class="opportunity-image"></div>
+                <h3 class="opportunity-title">Interview Knowabouts</h3>
+                <div class="opportunity-details">
+                    <p>_By Malaika Joha</p>
+                    <button>Details</button>
+                </div>
+            </div>
+
+              <div class="opportunity-card">
+                <div class="opportunity-image"></div>
+                <h3 class="opportunity-title">Professional Speaking</h3>
+                <div class="opportunity-details">
+                    <p>Jesse Ememak</p>
+                    <button>Details</button>
+                </div>
+            </div>
+            <!-- Repeat similar structure for other two cards -->
+
+        </div>
+
+<div class="mentor_section">
+    <div class="mentor_info">
+        <div class="mentor_image">
+            <img src="https://via.placeholder.com/150" alt="Mentor Image">
+        </div>
+
+        <div class="mentor_details">
+            <h1>Having a Perfect Resume...</h1> 
+            <p>Join popular Spanish Author and mentor, Brian Dan (@briandan) as she outlines 10 Writing 
+            Tips to Help You Land A Position in the Tech Industry. 
+            Sofia has written 3 books and has been featured in Forbes, The New York Times, and The Wall Street Journal.</p>
+            <button>Publish</button>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+   <script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</body>
+</html>

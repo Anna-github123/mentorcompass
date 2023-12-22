@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ {{> Header }}
+</head>
+<body>
+{{> Menu }}
+
+     <section class="bannersection">
+        <div class="left-side">
+            <h1>Contact MentorCompass</h1>
+            <h2>Any questions or remarks?.</h2>
+            <h2>Just write us a message!.</h2>
+
+      
+        </div>
+        <div class="right-side">
+            <img src="./public/images/bannericon.jpeg" alt="Image">
+        </div>
+    </section>
+
+
+  
+
+
+    <section class="contact_form">
+      <div id="contactForm">
+
+      <div class="contact_leftside">
+
+      <h3>Contact Information</h3>
+      <p>Say something to start a live call </p>
+      <p><img src="./public/images/phone-call.png"> +230 202 5678</p>
+      <p><img src="./public/images/email.png"> hello@mentorcompass.com</p>
+      <p><img src="./public/images/Vector.png"> 123 Powder Mill Road, Pamplemousses, Mauritius</p>
+
+      </div>
+
+     <div class="contact_rightside">
+    <form>
+    <div class="firstname_lastname">
+      <div>
+        
+        <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+      </div>
+   
+    <div>
+        
+        <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
+    </div>
+
+    </div>
+
+
+       <div class="email_phone">
+       <div>
+        
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+       </div>
+    
+        <div>
+  
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+        
+
+    </div>
+
+
+    
+<div class="subject">
+    <label for="subject">Select Subject</label>
+    <div class="subject-options">
+        <input type="radio" id="general" name="subject" value="General Inquiry" required>
+        <label for="general">General Inquiry</label>
+
+        <input type="radio" id="complaints" name="subject" value="Complaints" required>
+        <label for="complaints">Complaints</label>
+
+        <input type="radio" id="remarks" name="subject" value="Remarks" required>
+        <label for="remarks">Remarks</label>
+
+        <input type="radio" id="others" name="subject" value="Others" required>
+        <label for="others">Others</label>
+    </div>
+</div>
+      
+    
+      
+    <div class="message">
+      <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Type your message here" required></textarea>
+
+       
+    </div>
+
+<div>
+ <button type="submit" class="buttonsend">Send Message</button>
+</div>
+
+    </form>
+
+
+
+
+
+</div>
+      </div>
+
+     
+        </div>
+    </section>
+
+{{> Footer }}
+</body>
+</html>
